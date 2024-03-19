@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .relative {
+        position: relative;
+      }
+
+      .errorMessage {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        pointer-events: none;
+      }
+    </style>
+</head>
+<body class="flex justify-center items-center text-center content-center h-screen">
+  <!-- main container -->
+  <div class="flex flex-col justify-center bg-orange-100 rounded-lg shadow-2xl md:w-[90%] lg:w-[80%] xl:w-[70%] 2xl:w-[60%] mx-4 md:mx-auto items-center text-center rounded-ee-[80px] p-4">
+    <!-- date div -->
+    <div class="flex flex-col md:flex-row gap-5 relative">
+      <div class="relative">
+        <p class="hidden absolute top-full left-0 text-red-500 -mt-16 ml-5 errorMessage">Day</p>
+        <input id="dd" type="number" placeholder="DD" class="input input-bordered w-[70px] h-[40px] max-w-xs" />
+        <p class="hidden absolute top-full left-0 text-sm text-red-600 errorMessage">This field is required</p>
+      </div>
+      <div class="relative">
+        <p class="hidden absolute top-full left-0 text-red-500 -mt-16 ml-5 errorMessage">Month</p>
+        <input id="mm" type="text" placeholder="MM" class="input input-bordered w-[70px] h-[40px] max-w-xs" />
+        <p class="hidden absolute top-full left-0 text-sm text-red-600 errorMessage">This field is required</p>
+      </div>
+      <div class="relative">
+        <p class="hidden absolute top-full left-0 text-red-500 -mt-16 ml-5 errorMessage">Year</p>
+        <input id="yy" type="number" placeholder="YYYY" class="input input-bordered w-[70px] h-[40px] max-w-xs" />
+        <p class="hidden  w-full absolute top-full left-0 text-sm text-red-600 errorMessage">This field is required</p>
+      </div>
+    </div>
+
+    <!-- divider -->
+    <div class="flex items-center mt-10">
+      <!-- Horizontal Divider -->
+      <div class="flex-1 h-[10px] bg-black"></div>
+
+      <!-- Image with button -->
+      <div onclick="submitHandle()" class="relative bg-green-500 w-20 h-16 rounded-full flex items-center justify-center cursor-pointer overflow-hidden">
+        <img class="w-14 h-14 " src="img.png" alt="">
+        <span class="absolute top-0 left-0 w-full h-full border border-solid border-transparent transition duration-500 ease-in-out"></span>
+      </div>
+    </div>
+
+    <!-- show text -->
+    <div class="mt-5">
+      <p class="text-6xl font-extrabold"><span id="year" class="text-green-600 mr-5">_ _</span>Years</p>
+      <p class="text-6xl font-extrabold"><span id="month" class="text-green-600 mr-5">_ _</span>Months</p>
+      <p class="text-6xl font-extrabold"><span id="date" class="text-green-600 mr-5">_ _</span>Days</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
